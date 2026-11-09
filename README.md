@@ -2,10 +2,11 @@
 
 [![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
 
+给你的 DeepSeek Harness 网页界面换字体、调字号的小工具。专为看小字费劲的人打造：界面每个角落的字都能放大，而且不用猜"这个设置管哪块"——用准星点一下就知道。
+
 > **这是 [dsh-ui-font](https://github.com/warmwine/dsh-ui-font) 的维护分支。** 唯一的实质改动：把**代码字号轴**接上了。上游的滑杆只重写设计令牌里 `var(--dsh-code-font-size, 11px)` 的**兜底值**，而那个变量由 DSH 以行内样式写在 `body` 上，兜底值永远不生效——所以上游调不动代码块、行内代码和工具输出。这里额外发一条 `--dsh-code-font-size: Npx !important`，字号与行高（`--dsh-code-font-delta`）一起跟着滑杆走。
 >
 > 其余功能、设置键（`ui-font`）、API 路径都与上游一致。**不要和 dsh-ui-font 同时安装**——两者都会往 profile 里插同一套字体界面。
-给你的 DeepSeek Harness 网页界面换字体、调字号的小工具。专为看小字费劲的人打造：界面每个角落的字都能放大，而且不用猜"这个设置管哪块"——用准星点一下就知道。
 
 ## 效果
 
@@ -90,12 +91,11 @@
 ## 目录
 
 ```
-dsh-ui-font/
+dsh-ui-font-plus/
 ├── package.json       # dsh.bundle + dsh.client 声明（platform: web）
-├── cordis.patch.yml   # bundle 层插入行（ui-font）
+├── cordis.patch.yml   # bundle 层插入行（ui-font-plus）
 ├── lib/index.js       # 宿主半边：描述 + 字体枚举路由（webServer）
 ├── lib/client.js      # 浏览器半边：扫描引擎 + 令牌重写 + 设置页（settings.section）
-├── images/            # README 截图（不随 npm 包分发）
 └── CHANGELOG.md       # 版本变更记录
 ```
 
@@ -103,17 +103,19 @@ dsh-ui-font/
 
 ```sh
 # 安装
-dsh plugin --profile web add github:warmwine/dsh-ui-font
+dsh plugin --profile desktop add github:<owner>/dsh-ui-font-plus
 
 # 或本地开发
-dsh plugin --profile web add link:<本仓库路径>
+dsh plugin --profile desktop add link:<本仓库路径>
 
 # 卸载
-dsh plugin --profile web remove dsh-ui-font
+dsh plugin --profile desktop remove dsh-ui-font-plus
 ```
 
-安装/卸载后重启 `dsh web`。本插件零 bundled 依赖（宿主半边只用 Node 内置模块，
-浏览器半边只依赖平台提供的 react），安装无需构建授权。
+> 桌面版（图形界面）用户：插件 → 发现 / 已安装，填 `github:<owner>/dsh-ui-font-plus` 也能装。
+> profile 名按你自己的来：`dsh profile list` 里那个（Web 版常见是 `web`，桌面版常见是 `desktop`）。
+
+安装/卸载后重启 `dsh web`（或重启桌面应用）。本插件零 bundled 依赖（宿主半边只用 Node 内置模块，浏览器半边只依赖平台提供的 react），安装无需构建授权。
 
 插件不捆绑字体文件；所选字体缺失时自动回退系统默认字体栈。
 
