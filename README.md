@@ -1,18 +1,23 @@
-# dsh-ui-font
+# dsh-ui-font-plus
 
 [![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
 
+> **这是 [dsh-ui-font](https://github.com/warmwine/dsh-ui-font) 的维护分支。** 唯一的实质改动：把**代码字号轴**接上了。上游的滑杆只重写设计令牌里 `var(--dsh-code-font-size, 11px)` 的**兜底值**，而那个变量由 DSH 以行内样式写在 `body` 上，兜底值永远不生效——所以上游调不动代码块、行内代码和工具输出。这里额外发一条 `--dsh-code-font-size: Npx !important`，字号与行高（`--dsh-code-font-delta`）一起跟着滑杆走。
+>
+> 其余功能、设置键（`ui-font`）、API 路径都与上游一致。**不要和 dsh-ui-font 同时安装**——两者都会往 profile 里插同一套字体界面。
 给你的 DeepSeek Harness 网页界面换字体、调字号的小工具。专为看小字费劲的人打造：界面每个角落的字都能放大，而且不用猜"这个设置管哪块"——用准星点一下就知道。
 
 ## 效果
 
 |            安装前            |           安装后            |
 | :--------------------------: | :-------------------------: |
-| ![安装前](images/before.png) | ![安装后](images/after.png) |
+| ![安装前](https://raw.githubusercontent.com/warmwine/dsh-ui-font/HEAD/images/before.png) | ![安装后](https://raw.githubusercontent.com/warmwine/dsh-ui-font/HEAD/images/after.png) |
 
 设置界面（侧边栏 → 设置 → 字体）：
 
-![设置界面](images/setting.png)
+![设置界面](https://raw.githubusercontent.com/warmwine/dsh-ui-font/HEAD/images/setting.png)
+
+> 截图沿用上游仓库（界面与上游一致），后续可换成自己的。
 
 ## 它能干什么
 
