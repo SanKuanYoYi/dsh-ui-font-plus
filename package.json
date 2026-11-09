@@ -41,7 +41,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/<YOUR_GITHUB_ID>/dsh-ui-font-plus.git"
+        "url": "git+https://github.com/SanKuanYoYi/dsh-ui-font-plus.git"
     },
     "license": "MIT"
 }
