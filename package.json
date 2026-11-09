@@ -1,7 +1,7 @@
-﻿{
+{
     "name": "dsh-ui-font-plus",
     "version": "0.9.7",
-    "description": "DSH Web GUI font engine + settings page: runtime discovery of every client plugin's styles, declaration-point pick-to-tune selector (design tokens / per-rule px), configurable hotkeys (picker / font size 卤1), system font enumeration via sfnt name-table parsing, DSH settings.yaml persistence (with localStorage fallback for older installs and offline reads), manual refresh (no polling).",
+    "description": "DSH Web GUI font engine + settings page, with the code-font axis wired up: the global size slider scales body text AND code blocks / inline code / tool output (upstream dsh-ui-font only rewrites the var() fallback, so code stayed put). Also: runtime discovery of every client plugin's styles, declaration-point pick-to-tune selector (design tokens / per-rule px), configurable hotkeys (picker / font size +/-1), system font enumeration via sfnt name-table parsing, DSH settings.yaml persistence (with localStorage fallback for older installs and offline reads), manual refresh (no polling).",
     "type": "module",
     "main": "lib/index.js",
     "exports": {
@@ -28,14 +28,20 @@
         "dsh-plugin",
         "font",
         "font-size",
+        "code-font",
         "ui",
+        "accessibility",
         "settings"
     ],
     "files": [
         "lib",
         "cordis.patch.yml",
-        "README.md"
+        "README.md",
+        "CHANGELOG.md"
     ],
-    "repository": { "type": "git", "url": "git+https://github.com/<YOUR_GITHUB_ID>/dsh-ui-font.git" },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/<YOUR_GITHUB_ID>/dsh-ui-font-plus.git"
+    },
     "license": "MIT"
 }
