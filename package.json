@@ -1,5 +1,5 @@
 ﻿{
-    "name": "dsh-ui-font",
+    "name": "dsh-ui-font-plus",
     "version": "0.9.7",
     "description": "DSH Web GUI font engine + settings page: runtime discovery of every client plugin's styles, declaration-point pick-to-tune selector (design tokens / per-rule px), configurable hotkeys (picker / font size 卤1), system font enumeration via sfnt name-table parsing, DSH settings.yaml persistence (with localStorage fallback for older installs and offline reads), manual refresh (no polling).",
     "type": "module",
